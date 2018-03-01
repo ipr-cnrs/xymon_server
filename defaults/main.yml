@@ -1,0 +1,31 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+#
+# ipr-cnrs.xymon_server default variables [[[
+# ======================================
+
+# Server Packages and installation [[[
+# -----------------------------
+
+# .. envvar:: xymon_server__base_packages [[[
+#
+# List of base packages to install.
+xymon_server__base_packages:
+  - 'xymon'
+
+                                                                   # ]]]
+# .. envvar:: xymon_server__deploy_state [[[
+#
+# What is the desired state which this role should achieve? Possible options:
+#
+# ``present``
+#   Default. Ensure that xymon server is installed and configured as requested.
+#
+# ``absent``
+#   Ensure that xymon server is uninstalled and it's configuration is removed.
+#   TODO
+#
+xymon_server__deploy_state: 'present'
+                                                                   # ]]]
+
+                                                                   # ]]]
