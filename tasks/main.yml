@@ -1,7 +1,7 @@
 ---
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 #
-# tasks file for ipr.ansible.xymon
+# tasks file for ipr-cnrs.xymon_server
 
 # Server Manage required system packages [[[1
 - name: Ensure required packages are in there desired state
@@ -11,4 +11,21 @@
     install_recommends: False
   with_flattened:
     - '{{ xymon_server__base_packages }}'
+
+
+# Server Manage /etc configuration files [[[1
+
+- name: Ensure /etc directory structure exists
+  file:
+    path: '/etc/xymon/{{ item.path }}'
+    state: directory
+  with_filetree: '{{ xymon_server__etc_src }}'
+  when: item.state == 'directory'
+
+- name: Ensure /etc files are populated from templates
+  template:
+    src: '{{ item.src }}'
+    dest: "/etc/xymon/{{ item.path | replace('.j2','') }}"
+  with_filetree: '{{ xymon_server__etc_src }}'
+  when: item.state == 'file'
 

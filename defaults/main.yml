@@ -26,6 +26,23 @@ xymon_server__base_packages:
 #   TODO
 #
 xymon_server__deploy_state: 'present'
+
+                                                                   # ]]]
+
+                                                                   # ]]]
+
+# Server configuration [[[
+# -----------------------------
+
+# .. envvar:: xymon_server__etc_src [[[.
+# Directory with templates used to provide server configuration (usually in
+# '/etc/xymon').
+#
+# Must be a relative path to default/ directory of this role
+# or to your ansible inventory directory.
+#
+xymon_server__etc_src: '../templates/etc/xymon'
+
                                                                    # ]]]
 
                                                                    # ]]]
