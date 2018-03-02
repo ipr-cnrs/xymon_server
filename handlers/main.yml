@@ -1,0 +1,10 @@
+---
+# handlers file for xymon_server
+- name: restart xymon server service
+  service:
+    name: '{{ xymon_server__service_name }}'
+    state: '{{ "restarted" if (xymon_server__deploy_state == "present" and
+                            (xymon_server__service_manage | d(True) | bool))
+          else "stopped" }}'
+    enabled: '{{ xymon_server__service_manage | d(True) | bool }}'
+

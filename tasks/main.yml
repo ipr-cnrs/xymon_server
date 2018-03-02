@@ -21,6 +21,7 @@
     state: directory
   with_filetree: '{{ xymon_server__etc_src }}'
   when: item.state == 'directory'
+  notify: ['restart xymon server service']
 
 - name: Ensure /etc files are populated from templates
   template:
@@ -28,12 +29,13 @@
     dest: "/etc/xymon/{{ item.path | replace('.j2','') }}"
   with_filetree: '{{ xymon_server__etc_src }}'
   when: item.state == 'file'
+  notify: ['restart xymon server service']
 
-# Manage services [[[1
+# Manage service [[[1
 
 - name: Manage Xymon server service
   service:
-    name: 'xymon'
+    name: '{{ xymon_server__service_name }}'
     state: '{{ "started" if (xymon_server__deploy_state == "present" and
                             (xymon_server__service_manage | d(True) | bool))
           else "stopped" }}'

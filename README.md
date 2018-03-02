@@ -18,6 +18,7 @@ Manage Xymon server installation and configuration.
 * **xymon_server__deploy_state** : The desired state this role should achieve [default : `present`].
 * **ymon_server__etc_src** : Directory used as source to templating /etc configuration content [default : `etc/xymon`].
 * **xymon_server__service_manage** : If the Xymon server service should be managed [default : `True`].
+* **xymon_server__service_name** : The service name to manage [default : `xymon`].
 
 ## Example Playbook
 
@@ -35,6 +36,7 @@ This role will :
 * Install needed packages to provide `xymon` server.
 * Manage `xymon` server configuration (/etc).
 * Ensure `xymon` server service is enabled and started.
+* Ensure to restart `xymon` server service if configuration changed.
 
 ## Development
 

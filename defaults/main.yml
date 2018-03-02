@@ -28,6 +28,13 @@ xymon_server__base_packages:
 xymon_server__deploy_state: 'present'
 
                                                                    # ]]]
+# .. envvar:: xymon_server__service_name [[[
+#
+# The service name to manage.
+#
+xymon_server__service_name: 'xymon'
+
+                                                                   # ]]]
 # .. envvar:: xymon_server__service_manage [[[
 #
 # If the Xymon server service should be managed? Possible options:
