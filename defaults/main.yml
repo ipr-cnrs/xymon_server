@@ -28,6 +28,19 @@ xymon_server__base_packages:
 xymon_server__deploy_state: 'present'
 
                                                                    # ]]]
+# .. envvar:: xymon_server__service_manage [[[
+#
+# If the Xymon server service should be managed? Possible options:
+#
+# ``True``
+#   Default. The service is started and enabled.
+#
+# ``False``
+#   The service is stopped and disabled from startup.
+#
+xymon_server__service_manage: True
+
+                                                                   # ]]]
 
                                                                    # ]]]
 

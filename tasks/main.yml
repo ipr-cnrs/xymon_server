@@ -29,3 +29,13 @@
   with_filetree: '{{ xymon_server__etc_src }}'
   when: item.state == 'file'
 
+# Manage services [[[1
+
+- name: Manage Xymon server service
+  service:
+    name: 'xymon'
+    state: '{{ "started" if (xymon_server__deploy_state == "present" and
+                            (xymon_server__service_manage | d(True) | bool))
+          else "stopped" }}'
+    enabled: '{{ xymon_server__service_manage | d(True) | bool }}'
+
