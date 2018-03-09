@@ -22,8 +22,7 @@ xymon_server__base_packages:
 #   Default. Ensure that xymon server is installed and configured as requested.
 #
 # ``absent``
-#   Ensure that xymon server is uninstalled and it's configuration is removed.
-#   TODO
+#   Ensure that xymon server is uninstalled but keep configuration.
 #
 xymon_server__deploy_state: 'present'
 

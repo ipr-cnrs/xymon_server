@@ -16,7 +16,7 @@ Manage Xymon server installation and configuration.
 
 * **xymon_server__base_packages** : List of base packages in order to provide `xymon` server [default : `xymon`].
 * **xymon_server__deploy_state** : The desired state this role should achieve [default : `present`].
-* **ymon_server__etc_src** : Directory used as source to templating /etc configuration content [default : `etc/xymon`].
+* **ymon_server__etc_src** : Directory used as source to templating /etc/xymon configuration content [default : `../templates/etc/xymon`].
 * **xymon_server__service_manage** : If the Xymon server service should be managed [default : `True`].
 * **xymon_server__service_name** : The service name to manage [default : `xymon`].
 
@@ -30,11 +30,36 @@ Manage Xymon server installation and configuration.
     - role: ipr-cnrs.xymon_server
 ```
 
+* Use your own Xymon's configuration as source :
+
+``` yml
+- hosts: xymon.DOMAIN
+  roles:
+    - role: ipr-cnrs.xymon_server
+      xymon_server__etc_src: '{{ inventory_dir + "/../resources/host/xymon.DOMAIN/etc/xymon/" }}'
+```
+
+  * Ensure your directory contains only templates or sub-directories, such as :
+
+``` sh
+xymon.DOMAIN
+└── etc
+    └── xymon
+        ├── alerts.cfg.j2
+        ├── analysis.cfg.j2
+        ├── client-local.cfg.j2
+        ├── hosts.cfg.j2
+        └── hosts.d
+            ├── common.lxc.cfg.j2
+            ├── common.storage.cfg.j2
+            └── test.cfg.j2
+```
+
 ## Configuration
 
 This role will :
 * Install needed packages to provide `xymon` server.
-* Manage `xymon` server configuration (/etc).
+* Manage `xymon` server configuration (/etc/xymon).
 * Ensure `xymon` server service is enabled and started.
 * Ensure to restart `xymon` server service if configuration changed.
 

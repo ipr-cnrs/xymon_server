@@ -12,7 +12,6 @@
   with_flattened:
     - '{{ xymon_server__base_packages }}'
 
-
 # Server Manage /etc configuration files [[[1
 
 - name: Ensure /etc directory structure exists
@@ -39,5 +38,6 @@
     state: '{{ "started" if (xymon_server__deploy_state == "present" and
                             (xymon_server__service_manage | d(True) | bool))
           else "stopped" }}'
-    enabled: '{{ xymon_server__service_manage | d(True) | bool }}'
+    enabled: '{{ (xymon_server__deploy_state == "present") and
+                 (xymon_server__service_manage | d(True) | bool) }}'
 
