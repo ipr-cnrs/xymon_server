@@ -31,6 +31,17 @@
   when: item.state == 'file'
   notify: ['restart xymon server service']
 
+- name: Generate Xymon configuration symlinks
+  template:
+    src: '{{ item.src }}'
+    dest: "/etc/xymon/{{ item.path }}"
+    mode: '{{ item.mode }}'
+    state: 'link'
+    force: true
+  with_filetree: '{{ xymon_server__etc_src }}'
+  when: item.state == 'link'
+  notify: ['restart xymon server service']
+
 # Manage service [[[1
 
 - name: Manage Xymon server service

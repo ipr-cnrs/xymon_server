@@ -1,8 +1,10 @@
-## v1.x
+## v1.1
 
 ### Fix
 * Ensure to keep permissions for configuration files.
 
+### Enhancements
+* Allow possibility to add symlinks in Xymon configuration.
 
 ## v1.0
 
