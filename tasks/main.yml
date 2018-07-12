@@ -22,10 +22,11 @@
   when: item.state == 'directory'
   notify: ['restart xymon server service']
 
-- name: Ensure /etc files are populated from templates
+- name: Generate Xymon configuration files
   template:
     src: '{{ item.src }}'
     dest: "/etc/xymon/{{ item.path | replace('.j2','') }}"
+    mode: '{{ item.mode }}'
   with_filetree: '{{ xymon_server__etc_src }}'
   when: item.state == 'file'
   notify: ['restart xymon server service']

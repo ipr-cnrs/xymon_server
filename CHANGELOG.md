@@ -1,3 +1,8 @@
+## v1.x
+
+### Fix
+* Ensure to keep permissions for configuration files.
+
 
 ## v1.0
 
