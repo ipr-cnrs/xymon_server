@@ -52,4 +52,3 @@
           else "stopped" }}'
     enabled: '{{ (xymon_server__deploy_state == "present") and
                  (xymon_server__service_manage | d(True) | bool) }}'
-

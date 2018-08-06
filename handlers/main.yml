@@ -7,4 +7,3 @@
                             (xymon_server__service_manage | d(True) | bool))
           else "stopped" }}'
     enabled: '{{ xymon_server__service_manage | d(True) | bool }}'
-

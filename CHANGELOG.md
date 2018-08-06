@@ -2,6 +2,7 @@
 
 ### Fix
 * Set empty dependencies line to fix Galaxy warning.
+* Fix small warnings from linter.
 
 ## v1.1
 
