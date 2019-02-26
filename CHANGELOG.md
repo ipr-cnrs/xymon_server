@@ -1,10 +1,10 @@
-## v1.X
+## v1.1.1
 
 ### Fix
 * Set empty dependencies line to fix Galaxy warning.
 * Fix small warnings from linter.
 
-## v1.1
+## v1.1.0
 
 ### Fix
 * Ensure to keep permissions for configuration files.
@@ -12,7 +12,7 @@
 ### Enhancements
 * Allow possibility to add symlinks in Xymon configuration.
 
-## v1.0
+## v1.0.0
 
 ### Features
 * Install `xymon` packages for Debian based distros.
