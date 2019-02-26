@@ -3,6 +3,7 @@
 ### Fix
 * Set empty dependencies line to fix Galaxy warning.
 * Fix small warnings from linter.
+* Fix E405 Remote package tasks should have a retry.
 
 ## v1.1.0
 

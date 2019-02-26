@@ -11,6 +11,8 @@
     install_recommends: False
   with_flattened:
     - '{{ xymon_server__base_packages }}'
+  register: server_pkg_result
+  until: server_pkg_result is success
 
 # Server Manage /etc configuration files [[[1
 
