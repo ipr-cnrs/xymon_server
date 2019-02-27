@@ -10,7 +10,7 @@
     state: '{{ "present" if (xymon_server__deploy_state == "present") else "absent" }}'
     install_recommends: False
   with_flattened:
-    - '{{ xymon_server__base_packages }}'
+    - '{{ xymon_server__base_packages | to_nice_json }}'
   register: server_pkg_result
   until: server_pkg_result is success
 

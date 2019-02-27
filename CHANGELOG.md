@@ -1,3 +1,9 @@
+
+## v1.1.2
+
+### Enhancements
+* Use to_nice_json to manage packages list.
+
 ## v1.1.1
 
 ### Fix
