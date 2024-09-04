@@ -1,4 +1,4 @@
-# {{ ansible_managed }}
+# {{ ansible_managed | comment }}
 #
 # Master configuration file for Xymon
 #
@@ -20,6 +20,6 @@
 
 #page common Common
 
-#group-except sslcert|bbd|xymond|xymongen|xymonnet|xymonproxy <font size="+1">Test</font>⏎
-#include hosts.d/common.cfg⏎
+#group-except sslcert|bbd|xymond|xymongen|xymonnet|xymonproxy <font size="+1">Test</font>
+#include hosts.d/common.cfg
 
