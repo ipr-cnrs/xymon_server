@@ -2,6 +2,7 @@
 
 ### Fix
 * Replace flatten jinja filter with **list**.
+* Call module with FQCN.
 
 ## v1.1.2
 
