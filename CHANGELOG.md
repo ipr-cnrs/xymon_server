@@ -1,3 +1,7 @@
+## v1.2.0
+
+### Fix
+* Replace flatten jinja filter with **list**.
 
 ## v1.1.2
 
