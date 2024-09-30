@@ -1,3 +1,11 @@
+## v1.2.0
+
+### Fix
+* Replace flatten jinja filter with **list**.
+* Call module with FQCN.
+
+### Enhancements
+* Use comment jinja filter with ansible_managed to allow multi-lines comment.
 
 ## v1.1.2
 

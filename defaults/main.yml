@@ -11,7 +11,7 @@
 #
 # List of base packages to install.
 xymon_server__base_packages:
-  - 'xymon'
+  - xymon
 
                                                                    # ]]]
 # .. envvar:: xymon_server__deploy_state [[[
